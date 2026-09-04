@@ -1,0 +1,35 @@
+---
+title: "Env Dev: Gestión de Variables de Entorno en SoulChat"
+sidebarTitle: "Env Dev"
+description: "Gestiona y modifica los parámetros operativos, llaves de integración y variables técnicas que controlan el comportamiento de SoulChat y sus servicios conectados."
+---
+
+En la pestaña Env Dev gestionas y modificas los parámetros operativos, llaves de integración y variables técnicas que controlan el comportamiento de la plataforma y sus servicios conectados. Desde esta sección puedes buscar, editar, cifrar y guardar variables de entorno de forma individual.
+
+## Barra de control
+
+- **Buscador**: campo **Buscar por clave o descripción** para localizar rápidamente cualquier variable técnica.
+- **Ordenamiento**: botón para ordenar alfabéticamente **A → Z**.
+- **Paginación y recarga**: selector de registros visibles (5 por página) y botón **Refrescar** para sincronizar los valores con el servidor.
+
+## Tabla de variables de entorno
+
+| Columna | Descripción |
+| --- | --- |
+| **Variable** | Clave técnica en mayúsculas (ej. `AI_COPILOT_LLM_API_KEY`, `CORS_ALLOWED_HEADERS`). |
+| **Valor** | Campo editable para ingresar o actualizar el dato (API keys, modelos, flags booleanos, listas de cabeceras). |
+| **Cifrado** | Interruptor con icono de candado para encriptar datos confidenciales (requiere `ENCRYPTION_KEY` activa). Las variables cifradas ocultan su contenido y solo admiten sobreescritura. |
+| **Descripción** | Cuadro de texto explicativo sobre el uso, sintaxis esperada o consideraciones técnicas de la variable. |
+| **Acciones** | **Guardar** (icono de disquete) para persistir cambios individuales. **Eliminar** (papelera) para remover la variable del entorno. |
+
+## Paginación inferior
+
+Al final de la tabla se muestra la posición actual (por ejemplo, **Página 1 de 4, 20 variables**) junto con los botones **Anterior** y **Siguiente** para navegar entre páginas.
+
+<Warning>
+  Las variables cifradas no pueden recuperarse una vez guardadas. Si pierdes el valor original, deberás reemplazarlo por uno nuevo.
+</Warning>
+
+<Warning>
+  Modificar variables como API keys de integración puede interrumpir servicios activos. Realiza cambios en horarios de baja actividad y coordina con el equipo técnico antes de modificar variables críticas.
+</Warning>

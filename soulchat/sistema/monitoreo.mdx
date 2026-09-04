@@ -1,0 +1,35 @@
+---
+title: "Monitoreo del Sistema: Estado en Tiempo Real de los Servicios de SOUL"
+sidebarTitle: "Monitoreo"
+description: "Supervisa en tiempo real la salud, disponibilidad y estado operativo de los microservicios, bases de datos e integraciones críticas que componen la plataforma SOUL."
+---
+
+En la pestaña Monitoreo supervisas en tiempo real la salud, disponibilidad y estado operativo de los distintos microservicios, bases de datos e integraciones críticas que componen la plataforma SOUL. Esta vista te permite detectar fallas de infraestructura de forma proactiva antes de que afecten a los usuarios finales.
+
+## Filtros de control
+
+| Filtro | Descripción |
+| --- | --- |
+| **Tipo** | Menú desplegable para segmentar por categoría de componente (Base de datos, API, WebSocket, etc.). |
+| **Estado** | Buscador predictivo para filtrar por condición operativa: `UP` (estable) o `CRITICAL`/`DOWN` (fallas o detenido). |
+| **Ambiente** | Selector para delimitar el monitoreo por entorno de ejecución (por ejemplo, `PRODUCTION`). |
+| **Actualizar** | Botón con icono de giro para forzar la recarga manual del estado de todos los servicios. |
+
+## Tarjetas de estado de servicio
+
+Cada componente o servicio crítico está representado por una tarjeta individual que muestra:
+
+- **Icono y nombre**: identificador visual del servicio (PostgreSQL, Redis, Chat WebSocket, Kafka Broker, etc.).
+- **Identificador de ambiente**: etiqueta del entorno al que pertenece la instancia (ej. `POSTGRES · production`).
+- **Indicador de estado**:
+  - Punto **verde (UP)**: el servicio responde correctamente y está operativo.
+  - Punto **rojo (CRITICAL/DOWN)**: el servicio presenta fallas o está detenido. En casos de falla crítica puede aplicarse censura visual (`CENSORED ID`) sobre detalles sensibles.
+- **Marca temporal**: fecha y hora exacta del último reporte de estado sincronizado.
+
+<Warning>
+  Si un servicio crítico como PostgreSQL o Redis aparece en estado **CRITICAL**, notifica de inmediato al equipo de infraestructura. No intentes reiniciar servicios desde esta interfaz.
+</Warning>
+
+<Tip>
+  Recarga la vista manualmente con el botón **Actualizar** antes de escalar un incidente, ya que el estado puede haber cambiado desde la última sincronización automática.
+</Tip>

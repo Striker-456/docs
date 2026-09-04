@@ -1,0 +1,83 @@
+---
+title: "Chat SoulChat: gestión de conversaciones como agente"
+sidebarTitle: "Chat Agente"
+description: "Administra tus conversaciones activas, cambia tu estado de disponibilidad e inicia nuevas interacciones outbound desde el módulo Chat de SoulChat WP."
+---
+
+El módulo Chat es el espacio de trabajo principal del agente en SoulChat WP. Desde aquí puedes ver tus conversaciones asignadas, cambiar tu estado de disponibilidad y lanzar nuevas interacciones outbound hacia clientes.
+
+![Módulo Chat - estados de agente](/images/soulchat/chat-estados.png)
+
+## Estado de disponibilidad
+
+El encabezado del panel izquierdo muestra tu nombre y estado actual. Haz clic en el estado para desplegar el menú de opciones.
+
+| Estado | Color | Descripción |
+| --- | --- | --- |
+| En línea | Verde | Disponible para recibir conversaciones |
+| En pausa | Naranja | Temporalmente no disponible |
+| Baño | Gris | Pausa por necesidad personal |
+| Almuerzo | Gris | Pausa por horario de almuerzo |
+| Descanso | Gris | Pausa por descanso programado |
+| Capacitación | Gris | En sesión de formación |
+
+## Buscar conversación
+
+El campo **"Buscar chat por ID de conv..."** permite localizar una conversación específica ingresando su identificador único.
+
+## Nueva interacción
+
+![Botón Nueva interacción](/images/soulchat/nueva-interaccion-btn.png)
+
+El ícono `[+]` junto al campo de búsqueda abre el modal para iniciar una conversación outbound. El ícono del reloj al lado muestra el historial de interacciones.
+
+### Pasos para iniciar una nueva interacción
+
+<Steps>
+  <Step title="Abrir el modal">
+    Haz clic en el ícono `[+]` (Nueva interacción) en la barra superior del panel Chat. Aparece el modal con el subtítulo "Envía un template aprobado para iniciar una conversación outbound."
+  </Step>
+  <Step title="Seleccionar canal">
+    En el campo **Canal**, selecciona `WhatsApp` u otro canal disponible.
+  </Step>
+  <Step title="Ingresar destino">
+    Selecciona el **País** con su código (ej: COL +57) e ingresa el **Teléfono** del cliente.
+  </Step>
+  <Step title="Asignar cola">
+    En el campo **Cola**, escribe o selecciona la cola de enrutamiento (ej: `global`).
+  </Step>
+  <Step title="Seleccionar template">
+    En **Template**, busca y selecciona el template aprobado por Meta que deseas enviar.
+  </Step>
+  <Step title="Enviar">
+    Haz clic en **Enviar** para iniciar la conversación. El botón se activa solo cuando todos los campos requeridos están completos.
+  </Step>
+</Steps>
+
+![Modal Nueva interacción](/images/soulchat/nueva-interaccion-modal.png)
+
+<Warning>
+  Solo puedes iniciar conversaciones outbound usando templates aprobados por Meta. No es posible enviar mensajes de texto libre como primer contacto.
+</Warning>
+
+## Adjuntar archivos
+
+Dentro de una conversación abierta, en la barra inferior aparece el ícono de clip para adjuntar archivos.
+
+![Botón adjuntar archivo](/images/soulchat/adjunto-btn.png)
+
+<Steps>
+  <Step title="Abrir el selector de archivos">
+    Haz clic en el ícono de clip en la barra de escritura.
+  </Step>
+  <Step title="Seleccionar el archivo">
+    Elige el archivo desde tu equipo: imágenes, documentos o audio.
+  </Step>
+  <Step title="Enviar el adjunto">
+    Agrega un mensaje opcional y presiona enviar.
+  </Step>
+</Steps>
+
+<Note>
+  Los formatos y tamaños de archivo admitidos dependen de los límites de WhatsApp Business API. Consulta la sección de Configuración para más detalles.
+</Note>

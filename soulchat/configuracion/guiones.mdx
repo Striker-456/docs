@@ -1,0 +1,84 @@
+---
+title: "Guiones Predefinidos para Agentes en SoulChat"
+sidebarTitle: "Guiones"
+description: "Configura mensajes predefinidos que los agentes insertan rápidamente durante conversaciones en SoulChat. Organiza guiones por categoría con variables dinámicas y tags."
+---
+
+Los guiones son mensajes predefinidos que los agentes pueden insertar rápidamente durante las conversaciones para estandarizar respuestas y reducir tiempos de atención. Desde esta sección configuras, organizas y habilitas los guiones disponibles para todo el equipo.
+
+![Guiones](/images/soulchat/guiones-lista.png)
+
+## Lista de guiones
+
+La pantalla muestra todos los guiones en formato de tarjetas. Puedes filtrar por categoría y buscar por palabra clave para localizar guiones de forma ágil.
+
+| Elemento | Descripción |
+| --- | --- |
+| **Filtros de categoría** | Pestañas como **Todas** y **Saludo** para segmentar los guiones por tipo. |
+| **Buscador** | Campo **Buscar guion...** para localizar guiones por nombre o contenido. |
+
+Cada tarjeta muestra:
+
+| Elemento | Descripción |
+| --- | --- |
+| **Categoría** | Etiqueta superior que indica el tipo (por ejemplo, Saludo). |
+| **Nombre** | Título descriptivo del guión (por ejemplo, Prueba Guion, Saludo). |
+| **Contenido** | Vista previa del texto predefinido. |
+| **Tags** | Etiquetas como `#hola` para clasificar y filtrar guiones. |
+| **Estado** | Indicador de activo (check verde) cuando el guión está habilitado. |
+| **Acciones** | Botón de editar (lápiz) para modificar el guión. |
+
+## Crear un guion
+
+![Crear guion](/images/soulchat/guiones-crear.png)
+
+<Steps>
+  <Step title="Abrir el modal de creación">
+    Haz clic en el botón **\+ Crear guion** en la esquina superior derecha.
+  </Step>
+  <Step title="Ingresar el nombre">
+    Escribe un **Nombre** descriptivo en el campo obligatorio (por ejemplo, "Bienvenido estándar").
+  </Step>
+  <Step title="Seleccionar la categoría">
+    Elige una **Categoría** del menú desplegable (por ejemplo, Saludo).
+  </Step>
+  <Step title="Redactar el contenido">
+    Escribe el **Contenido** del guión en el área de texto. El límite máximo es 2,000 caracteres. Puedes incluir variables dinámicas como `{{cliente}}` o `{{agente}}`.
+  </Step>
+  <Step title="Agregar tags">
+    Ingresa **Tags** separados por comas para facilitar la búsqueda (por ejemplo, "bienvenida, ventas, soporte").
+  </Step>
+  <Step title="Verificar habilitación">
+    Confirma que la casilla **Habilitar** esté marcada para que el guión quede disponible para los agentes.
+  </Step>
+  <Step title="Guardar el guión">
+    Haz clic en **Crear guion** para guardar. Usa **Cancelar** para descartar los cambios.
+  </Step>
+</Steps>
+
+### Campos del formulario
+
+| Campo | Obligatorio | Descripción |
+| --- | --- | --- |
+| **Nombre** | Sí | Título descriptivo del guión. |
+| **Categoría** | Sí | Clasificación del guión. Se selecciona de un menú desplegable (por ejemplo, Saludo). |
+| **Contenido** | Sí | Texto completo del mensaje predefinido. Máximo 2,000 caracteres. |
+| **Tags** | No | Etiquetas separadas por comas para organizar y filtrar guiones. |
+| **Habilitar** | No | Casilla que activa el guión para uso en conversaciones activas. |
+
+## Variables disponibles
+
+El contenido de los guiones admite variables dinámicas que se reemplazan automáticamente con datos reales al momento de enviar el mensaje:
+
+| Variable | Descripción |
+| --- | --- |
+| `{{cliente}}` | Nombre del cliente que está en conversación. |
+| `{{agente}}` | Nombre del agente que atiende la conversación. |
+
+<Tip>
+  Usa tags descriptivos para que los agentes encuentren guiones rápidamente durante la atención. Etiquetas claras como "bienvenida", "cierre" o "escalación" reducen el tiempo de búsqueda en momentos clave.
+</Tip>
+
+<Note>
+  Solo los guiones con la casilla **Habilitar** marcada aparecen disponibles para los agentes durante la conversación. Un guión deshabilitado permanece guardado pero no se muestra en el panel de respuestas rápidas.
+</Note>

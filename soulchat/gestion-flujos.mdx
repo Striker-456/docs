@@ -1,0 +1,132 @@
+---
+title: "Flow Builder: gestión de flujos conversacionales"
+sidebarTitle: "Flow Builder"
+description: "Crea, edita y publica flujos conversacionales en SoulChat WP. Aprende a configurar entry points, roles y versiones de producción."
+---
+
+Flow Builder es el módulo de diseño de árboles conversacionales de SoulChat WP. Desde aquí puedes crear versiones en borrador, publicarlas y definir el punto de entrada de cada conversación.
+
+![Flow Builder - lista de flujos](/images/soulchat/flow-builder-lista.png)
+
+## Editor visual de flujos
+
+Al hacer clic en el ícono de lápiz (Editar) de cualquier flujo, se abre el editor visual de árboles conversacionales.
+
+![Editor visual de Flow Builder - flujo "test completo"](/images/soulchat/flow-builder-editor.png)
+
+### Barra de herramientas superior
+
+| Control | Descripción |
+| --- | --- |
+| **Crear nodo** | Agrega un nuevo nodo al canvas del flujo |
+| Zoom (%) | Ajusta el nivel de zoom del canvas (ej: 60%) |
+| **Validar** | Verifica que el flujo no tenga errores de configuración |
+| **Guardar draft** | Guarda el estado actual como borrador sin publicar |
+| **Publicar** | Publica el flujo en producción como nueva versión |
+
+### Panel de nodos disponibles
+
+El panel derecho muestra todos los tipos de nodos que puedes agregar al flujo:
+
+| Tipo | Etiqueta | Descripción |
+| --- | --- | --- |
+| TEXT | Inicial | Nodo de entrada principal del flujo (solo puede haber uno) |
+| OPTIONS | Intermedio | Presenta opciones al usuario y ramifica según la respuesta |
+| TEXT | Nuevo nodo | Nodo de texto genérico para mensajes informativos |
+| TEXT | Paso agente | Transfiere la conversación a un agente humano |
+| TEXT | Nodo texto | Envía un mensaje de texto simple al usuario |
+| BUTTON | Nodo botoncitos | Presenta botones interactivos al usuario |
+| LIST | Nodo Lista | Muestra una lista de opciones desplegable |
+| ATTACHMENT | Nodo adjunto | Envía un archivo adjunto (imagen, documento, etc.) |
+| LOCATION | Nodo ubicacion | Solicita o envía una ubicación geográfica |
+| TEXT | Nodo fin | Cierra el flujo conversacional |
+| ENDPOINT | Prueba endpoint | Llama a una API externa en modo prueba |
+| TEXT | Efectivo endpoint | Rama de respuesta exitosa de un endpoint |
+| TEXT | No Efectivo endpoint | Rama de respuesta fallida de un endpoint |
+| SUBTREE | Encuesta | Invoca el subflujo de encuesta de satisfacción |
+
+### Barra de estado inferior
+
+La barra inferior indica el estado de validación del flujo en tiempo real. El mensaje **`✓ Sin errores ni advertencias.`** confirma que el flujo puede publicarse.
+
+<Note>
+  El botón **Publicar** solo genera una nueva versión de producción si el flujo pasa la validación. Si hay errores, corrige los nodos señalados antes de publicar.
+</Note>
+
+## Tabla de flujos
+
+La interfaz principal muestra los flujos configurados en el sistema. Cada fila representa un flujo con su configuración y estado actual.
+
+| Columna | Descripción |
+| --- | --- |
+| NOMBRE | Nombre identificador del flujo |
+| ROL | Tipo de flujo: `root` o `subtree` |
+| ESTADO | Estado de publicación: `active` (verde) |
+| ENTRY POINT | Toggle para activar como punto de entrada de conversaciones |
+| PRODUCCIÓN | Versión activa en producción (ej: v2, v4, v6) |
+| ACCIONES | Editar (lápiz), Publicar (cohete), Descargar |
+
+## Filtrar por rol
+
+![Filtro de roles en Flow Builder](/images/soulchat/flow-builder-filtro.png)
+
+El selector **"Selecciona una opción"** permite filtrar la lista por tipo de flujo.
+
+<AccordionGroup>
+  <Accordion title="Todos los roles (por defecto)">
+    Muestra todos los flujos sin importar su rol.
+  </Accordion>
+
+  <Accordion title="root (puede ser entry point)">
+    Filtra solo flujos principales que pueden activarse como punto de entrada de conversaciones entrantes.
+  </Accordion>
+
+  <Accordion title="subtree (subflujo invocable)">
+    Filtra flujos secundarios diseñados para ser invocados desde otro flujo mediante un nodo de transferencia.
+  </Accordion>
+</AccordionGroup>
+
+## Acciones disponibles
+
+Cada fila incluye tres acciones rápidas representadas por íconos.
+
+| Acción | Ícono | Descripción |
+| --- | --- | --- |
+| Editar | Lápiz | Abre el editor visual del flujo |
+| Publicar | Cohete | Publica la versión borrador a producción |
+| Descargar | Flecha abajo | Exporta el flujo en formato JSON |
+
+## Crear un nuevo flujo
+
+<Steps>
+  <Step title="Inicia la creación">
+    Haz clic en el botón `+` **Crear flow** en la esquina superior derecha (señalado por la flecha azul en la captura).
+  </Step>
+  <Step title="Asigna un nombre">
+    Ingresa un nombre descriptivo para el flujo en el modal de creación.
+  </Step>
+  <Step title="Selecciona el rol">
+    Elige `root` si será un flujo principal, o `subtree` si será un subflujo invocable desde otro flujo.
+  </Step>
+  <Step title="Abre el editor visual">
+    El flujo se crea en estado borrador. Haz clic en el ícono de lápiz (Editar) para abrir el editor visual.
+  </Step>
+  <Step title="Diseña el árbol conversacional">
+    Añade nodos al flujo: mensajes, condiciones, transferencias y acciones según la lógica de tu conversación.
+  </Step>
+  <Step title="Publica el flujo">
+    Cuando el flujo esté listo, haz clic en el ícono de cohete (Publicar) para generar una nueva versión de producción.
+  </Step>
+</Steps>
+
+## Entry Point
+
+El toggle en la columna **ENTRY POINT** define qué flujo recibe las conversaciones entrantes. Solo puede haber un entry point activo a la vez por canal. En la captura, el flujo `test completo` (v6) es el entry point activo.
+
+<Warning>
+  Al activar un nuevo entry point, el flujo anterior deja de recibir conversaciones nuevas de inmediato. Las conversaciones en curso no se ven afectadas.
+</Warning>
+
+<Tip>
+  Usa roles `subtree` para modularizar flujos complejos: crea subárboles reutilizables e invócalos desde diferentes flujos `root` con un nodo de transferencia.
+</Tip>

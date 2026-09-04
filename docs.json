@@ -1,0 +1,87 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "maple",
+  "name": "SOUL",
+  "colors": {
+    "primary": "#2AABBB",
+    "light": "#4DC8D5",
+    "dark": "#1A8A99"
+  },
+  "favicon": {
+    "light": "/images/imagen_2026-09-03_142946031.png",
+    "dark": "/images/imagen_2026-09-03_142844660.png"
+  },
+  "navigation": {
+    "pages": [
+      {
+        "group": "Getting Started",
+        "pages": [
+          "index",
+          "quickstart"
+        ]
+      }
+    ],
+    "tabs": [
+      {
+        "tab": "SoulChat",
+        "groups": [
+          {
+            "group": "Introducción",
+            "pages": [
+              "soulchat/index",
+              "soulchat/inicio-de-sesion"
+            ]
+          },
+          {
+            "group": "Operaciones",
+            "pages": [
+              "soulchat/dashboard",
+              "soulchat/chat-rol-agente",
+              "soulchat/ejemplo-nueva-interaccion",
+              "soulchat/gestion-flujos"
+            ]
+          },
+          {
+            "group": "Configuración",
+            "pages": [
+              "soulchat/configuracion/index",
+              "soulchat/configuracion/canales-y-proveedores",
+              "soulchat/configuracion/configuracion-general",
+              "soulchat/configuracion/colas-y-horarios",
+              "soulchat/configuracion/gestor-de-sesiones",
+              "soulchat/configuracion/creador-de-formularios",
+              "soulchat/configuracion/meta-templates",
+              "soulchat/configuracion/guiones",
+              "soulchat/configuracion/campanas-masivas"
+            ]
+          },
+          {
+            "group": "Sistema",
+            "pages": [
+              "soulchat/sistema/logs-tecnicos",
+              "soulchat/sistema/auditoria",
+              "soulchat/sistema/env-dev",
+              "soulchat/sistema/catalogos",
+              "soulchat/sistema/monitoreo"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "logo": {
+    "light": "/images/imagen_2026-09-03_142844660.png",
+    "dark": "/images/imagen_2026-09-03_142946031.png"
+  },
+  "navbar": {
+    "links": [
+      {
+        "href": "mailto:soporte@empresa.com",
+        "label": "Soporte"
+      }
+    ]
+  },
+  "thumbnails": {
+    "background": "/images/imagen_2026-09-03_142844660.png"
+  }
+}

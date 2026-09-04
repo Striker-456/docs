@@ -1,0 +1,71 @@
+---
+title: "Dashboard de SoulChat: métricas en tiempo real"
+sidebarTitle: "Dashboard"
+description: "Consulta los KPIs operativos, monitorea agentes conectados y supervisa chats activos desde el Dashboard de SoulChat WP."
+---
+
+El Dashboard de SoulChat WP muestra las métricas operativas del canal en tiempo real. El indicador verde **"En vivo"** junto al contador "Próxima actualización en Xs" confirma que los datos están actualizados automáticamente.
+
+![Dashboard SoulChat](/images/soulchat/dashboard.png)
+
+## Tarjetas de métricas
+
+La parte superior presenta nueve tarjetas con los indicadores clave de rendimiento del canal.
+
+| Métrica | Valor ejemplo | Descripción |
+| --- | --- | --- |
+| Ofrecidas | 2 | Total de conversaciones entrantes ofrecidas al sistema |
+| Ofrecidas a agente | 0 | Conversaciones derivadas a un agente humano |
+| Resueltas solo por bot | 2 | Conversaciones resueltas sin intervención de agente |
+| Atendidas | 100% | Porcentaje de conversaciones atendidas |
+| Nivel de servicio (answer rate) | 100% | Tasa de respuesta dentro del SLA |
+| Nivel de servicio (tiempo de respuesta) | -378s | Tiempo promedio de primera respuesta |
+| Tiempo promedio de espera | 2m 35s | Tiempo que el cliente espera antes de ser atendido |
+| Chats activos | 0 | Conversaciones en curso en este momento |
+| En espera | 0 | Conversaciones esperando ser asignadas |
+
+<Note>
+  El valor negativo en "Nivel de servicio (tiempo de respuesta)" indica que las conversaciones se respondieron **antes** del umbral de SLA configurado. Es un resultado positivo.
+</Note>
+
+## Agentes
+
+La sección inferior muestra el estado actual de los agentes del canal.
+
+| Métrica | Valor ejemplo | Descripción |
+| --- | --- | --- |
+| Agentes online | 2 | Agentes con estado "En línea" |
+| Agentes en pausa | 3 | Agentes con estado de pausa activa |
+| Total agentes | 5 | Total de agentes configurados en el sistema |
+
+## Panel de conversaciones
+
+El panel inferior permite supervisar conversaciones y agentes en dos pestañas.
+
+**Pestaña Chats** — lista las conversaciones activas con las siguientes columnas:
+
+| Columna | Descripción |
+| --- | --- |
+| ACCIONES | Botones de acción rápida sobre la conversación |
+| DIRECCIÓN | Indica si la conversación es inbound o outbound |
+| ESTADO | Estado actual de la conversación |
+| CLIENTE | Nombre o identificador del cliente |
+| COLA | Cola a la que está asignada la conversación |
+| AGENTE | Agente responsable |
+| DETALLE | Información adicional de la interacción |
+
+Filtros disponibles en la pestaña Chats:
+
+| Filtro | Descripción |
+| --- | --- |
+| Dirección | Filtra por Todos, inbound u outbound |
+| Estado | Filtra por Todos los estados |
+| Buscar id | Localiza por identificador de conversación |
+| Buscar cola | Localiza por nombre de cola |
+| Buscar agente | Localiza por nombre de agente |
+
+**Pestaña Agentes conectados** — muestra la lista de agentes actualmente conectados, permitiendo supervisar la disponibilidad operativa en tiempo real.
+
+<Tip>
+  Usa el botón `+` azul en la esquina inferior derecha para iniciar una nueva interacción outbound directamente desde el Dashboard.
+</Tip>

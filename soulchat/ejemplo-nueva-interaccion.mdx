@@ -1,0 +1,76 @@
+---
+title: "Ejemplo: crear y gestionar una interacción outbound"
+sidebarTitle: "Ejemplo"
+description: "Caso de uso completo: inicia una conversación outbound por WhatsApp, tipifica al cliente y gestiona la respuesta desde SoulChat WP."
+---
+
+Este ejemplo muestra el flujo completo de una interacción outbound en SoulChat WP: desde el envío del template inicial hasta la tipificación y cierre del chat.
+
+## Escenario
+
+Un agente necesita contactar a un cliente para informarle sobre la actualización de su solicitud.
+
+| Campo | Valor |
+| --- | --- |
+| Número de teléfono | +57 322 722 6276 |
+| Cola asignada | `global` |
+| Canal | WhatsApp |
+
+## Flujo paso a paso
+
+<Steps>
+  <Step title="Iniciar la interacción">
+    En el módulo **Chat**, haz clic en el ícono `[+]` **Nueva interacción**. Completa los campos:
+
+    | Campo | Valor |
+    | --- | --- |
+    | Canal | WhatsApp |
+    | País | (COL) +57 |
+    | Teléfono | 3227226276 |
+    | Cola | global |
+    | Template | El template aprobado de tu organización |
+
+    Haz clic en **Enviar**.
+  </Step>
+  <Step title="Template enviado">
+    El sistema confirma el envío con una burbuja verde en la conversación: _"Plantilla: Template enviado: opcion1"_. La pantalla muestra el número del cliente y el canal (WhatsApp).
+  </Step>
+  <Step title="Cliente responde">
+    Cuando el cliente responde en WhatsApp, el mensaje aparece en el panel derecho. La conversación pasa a estado **Activo** y el agente puede responder en tiempo real.
+  </Step>
+  <Step title="Tipificar al cliente">
+    En el panel izquierdo aparece el formulario de **Tipificación** con los campos: **Nombre**, **Numero** y el toggle **Enviar encuesta**. Completa todos los campos obligatorios.
+  </Step>
+  <Step title="Cerrar tipificación">
+    Haz clic en **Tipificar** para registrar los datos del cliente. El botón permanece deshabilitado hasta que completes todos los campos marcados con `*`.
+  </Step>
+</Steps>
+
+## Vista del agente en SoulChat WP
+
+La siguiente imagen muestra el formulario de tipificación junto a la conversación activa:
+
+![Pantalla de tipificación y chat](/images/soulchat/ejemplo-tipificacion.png)
+
+## Vista del cliente en WhatsApp
+
+Así ve el cliente el mensaje en su dispositivo. El primer mensaje que recibe es el template enviado por la empresa:
+
+![Vista del cliente en WhatsApp](/images/soulchat/ejemplo-whatsapp.png)
+
+<Note>
+  El panel de Tipificación puede variar según la configuración de formularios de tu organización. Si no aparece automáticamente, haz clic en el botón **Tipificar** en la barra superior de la conversación.
+</Note>
+
+<Tip>
+  Activa el toggle **Enviar encuesta** si deseas que el cliente reciba una encuesta de satisfacción (CSAT) al cerrar la conversación.
+</Tip>
+
+## Resultado esperado
+
+| Etapa | Estado esperado | Señal visual |
+| --- | --- | --- |
+| Template enviado | Enviado | Burbuja verde con nombre del template |
+| Cliente responde | Activo | Mensaje del cliente en panel derecho |
+| Tipificación completa | Listo para cerrar | Botón "Tipificar" habilitado |
+| Conversación cerrada | Cerrada | Chat desaparece de la lista activa |

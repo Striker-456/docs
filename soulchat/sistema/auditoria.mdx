@@ -1,0 +1,73 @@
+---
+title: "Auditoría de Acciones en SoulChat"
+sidebarTitle: "Auditoría"
+description: "Consulta el historial de acciones ejecutadas en SoulChat. Filtra por usuario, tipo de entidad y rango de fechas para auditar operaciones con trazabilidad completa."
+---
+
+La Auditoría registra todas las acciones realizadas por usuarios y el sistema, permitiendo trazabilidad completa de operaciones sobre entidades del negocio. Desde esta pantalla puedes consultar el historial de eventos, aplicar filtros y revisar el detalle de cada acción ejecutada.
+
+![Auditoría](/images/soulchat/auditoria.png)
+
+## Tabla de registros
+
+La tabla principal muestra cada evento registrado con las siguientes columnas:
+
+| Columna | Descripción |
+| --- | --- |
+| **Usuario** | Persona o proceso que ejecutó la acción. Puede ser un usuario nominado o el valor "Sistema" para acciones automáticas. |
+| **Acción** | Operación realizada sobre la entidad (por ejemplo, Actualización, Cierre de conversación). |
+| **Tipo de entidad** | Categoría del objeto afectado (por ejemplo, Queue, Session). |
+| **Fecha** | Momento exacto de ejecución con fecha y hora detallada. |
+| **Detalle** | Ícono de ojo para desplegar la información completa del evento. |
+
+### Acciones registradas
+
+| Acción | Descripción |
+| --- | --- |
+| **Actualización** | Modificación de propiedades o configuración de una entidad existente. |
+| **Cierre de conversación** | Finalización de una sesión de chat con un cliente. |
+| **typify_session** | Tipificación o clasificación de una sesión de conversación al cerrar. |
+
+### Tipos de entidad
+
+| Tipo de entidad | Descripción |
+| --- | --- |
+| **ConnectResponse** | Configuración de canal de comunicación (proveedor, credenciales). |
+| **Queue** | Cola de atención de conversaciones. |
+| **Session** | Sesión de conversación con un cliente. |
+| **TypificationRecord** | Registro de tipificación generado al cerrar una sesión. |
+
+## Filtros de auditoría
+
+El panel superior ofrece controles para refinar la búsqueda de registros:
+
+| Filtro | Descripción |
+| --- | --- |
+| **Usuario** | Campo de búsqueda para filtrar por persona específica. Acepta también la palabra clave "Sistema". |
+| **Tipo de entidad** | Campo de búsqueda para filtrar por categoría del objeto afectado. |
+| **Ordenar por fecha** | Desplegable con opciones como "Más recientes primero" para ajustar el orden. |
+| **Desde / Hasta** | Campos de fecha en formato dd/mm/aaaa para delimitar el período de consulta. |
+
+## Ver detalle de un registro
+
+Cuando necesitas conocer información adicional sobre un evento, puedes consultar su detalle completo sin salir de la pantalla de auditoría.
+
+<Steps>
+  <Step title="Localizar el registro">
+    Desplázate por la tabla o aplica filtros para encontrar el evento que deseas revisar.
+  </Step>
+  <Step title="Abrir el detalle">
+    Haz clic en el ícono de ojo ubicado en la columna **DETALLE** del registro.
+  </Step>
+  <Step title="Revisar la información completa">
+    Se despliega un panel con los datos completos del evento, incluyendo los valores anteriores y posteriores cuando aplique.
+  </Step>
+</Steps>
+
+<Warning>
+  Los registros con más de 2 meses de antigüedad se eliminan automáticamente por el sistema. Si necesitas conservar información histórica más allá de este período, exporta o respalda los datos antes de que venza el plazo.
+</Warning>
+
+<Note>
+  La columna **Usuario** puede mostrar el valor **Sistema** cuando la acción fue ejecutada automáticamente por la plataforma sin intervención humana, por ejemplo en cierres de conversación programados o en procesos internos del sistema.
+</Note>

@@ -1,0 +1,67 @@
+---
+title: "Logs Técnicos del Sistema SOUL"
+sidebarTitle: "Logs Técnicos"
+description: "Consulta y filtra los logs técnicos de SoulChat en tiempo real. Diagnostica errores HTTP, monitorea la conectividad e identifica fallas en el estado del sistema."
+---
+
+Los Logs técnicos registran en tiempo real todas las peticiones HTTP y eventos del sistema. Esta herramienta es esencial para el diagnóstico de errores, la auditoría de integraciones y el monitoreo continuo del estado operativo de la plataforma SoulChat WP.
+
+![Logs técnicos](/images/soulchat/logs-tecnicos.png)
+
+## Interfaz de logs
+
+La consola presenta un diseño oscuro optimizado para lectura prolongada. En la parte superior encontrarás la barra de controles para filtrar, buscar y alternar entre modos de visualización. Los registros se muestran en orden cronológico donde cada fila representa un evento del sistema con su nivel de severidad, tipo, método HTTP y mensaje asociado.
+
+## Niveles de log
+
+Cada registro se clasifica con un nivel de severidad identificado visualmente con un color. Selecciona uno o varios niveles para enfocar el diagnóstico.
+
+| Nivel | Color | Descripción |
+| --- | --- | --- |
+| **Todos** | — | Muestra todos los registros sin filtrar por severidad. |
+| **Error** | Rojo | Indica fallas críticas que requieren atención inmediata, como endpoints no disponibles. |
+| **Warning** | Amarillo | Señala situaciones anómalas que no interrumpen el servicio pero podrían generar errores futuros. |
+| **Info** | Azul | Registra eventos informativos normales, como peticiones HTTP exitosas. |
+| **Debug** | Gris | Proporciona detalles técnicos adicionales útiles para depurar integraciones. |
+| **Verbose** | Gris claro | Ofrece la máxima granularidad de información para análisis profundos del sistema. |
+
+## Filtros disponibles
+
+| Filtro | Descripción |
+| --- | --- |
+| **Servicio** | Desplegable para seleccionar un servicio específico o ver "Todos los servicios". |
+| **Rango de fechas** | Selector para acotar los registros a un periodo determinado. |
+| **Texto libre** | Buscador para filtrar por contenido del mensaje o nombre de la acción ejecutada. |
+| **Nivel** | Botones de nivel para mostrar únicamente los registros de la severidad seleccionada. |
+
+## Modo EN VIVO
+
+Activa el botón **IN VIV** para habilitar el seguimiento de logs en tiempo real. En este modo, la consola se actualiza automáticamente a medida que ocurren nuevos eventos, lo que resulta indispensable durante pruebas de integración o al diagnosticar incidentes activos. Para detener la actualización automática, desactiva el mismo botón.
+
+## Interpretar un registro
+
+Cada fila de la consola sigue una estructura estandarizada:
+
+| Campo | Descripción |
+| --- | --- |
+| **Hora** | Marca temporal exacta del evento (formato de 12 horas). |
+| **Nivel** | Severidad del registro: INFO, ERROR, WARNING, DEBUG o VERBOSE. |
+| **Tipo** | Categoría del evento; el valor más común es `http` para peticiones de red. |
+| **Método** | Verbo HTTP empleado, como `GET` o `POST`. |
+| **URL** | Dirección del endpoint consultado. |
+| **Mensaje** | Resultado del evento, por ejemplo `Cannot GET` cuando el endpoint no responde. |
+
+## Errores comunes
+
+| Error | Posible causa | Acción recomendada |
+| --- | --- | --- |
+| `Cannot GET [url]` | El endpoint no está disponible o la URL configurada es incorrecta. | Verificar la configuración del proveedor y la validez de la URL. |
+| Secuencia de ERROR repetidos | Falla de conectividad de red o interrupción del servicio externo. | Revisar la conexión de red y el estado operativo del servicio. |
+
+<Tip>
+  Usa el botón **Limpiar** para resetear la vista de la consola sin afectar los logs almacenados en el sistema. Esto es útil cuando deseas enfocarte en nuevos eventos tras un diagnóstico previo.
+</Tip>
+
+<Note>
+  Los logs mostrados en pantalla son de solo lectura. No puedes modificarlos ni eliminarlos desde esta interfaz; su función es exclusivamente informativa y de diagnóstico.
+</Note>

@@ -1,0 +1,93 @@
+---
+title: "Creador de Formularios de Tipificación en SoulChat"
+sidebarTitle: "Formularios"
+description: "Diseña formularios configurables que los agentes diligencian al cerrar conversaciones. Crea campos personalizados, publica y asigna a colas en SoulChat."
+---
+
+El Creador de formularios te permite diseñar formularios personalizados que los agentes deben completar al cerrar cada interacción. Estos formularios centralizan la información de tipificación y facilitan el análisis posterior de las conversaciones.
+
+![Formularios de tipificación](/images/soulchat/formularios-lista.png)
+
+## Panel de formularios
+
+La pantalla principal muestra todos los formularios en formato de tarjetas. Usa las pestañas para filtrar por estado.
+
+| Pestaña | Descripción |
+| --- | --- |
+| **Todos** | Muestra todos los formularios sin importar su estado. |
+| **Borradores** | Formularios en edición que aún no han sido publicados. |
+| **Publicados** | Formularios activos disponibles para los agentes. |
+| **Archivados** | Formularios retirados que ya no están en uso. |
+
+Cada tarjeta muestra el nombre, descripción, colas asignadas, ID de publicación y las acciones disponibles: **Editor** (abrir editor), **[+]** (duplicar) y **papelera** (eliminar).
+
+<Note>
+  El formulario marcado como **Default** se aplica automáticamente en colas que no tienen un formulario específico asignado.
+</Note>
+
+## Crear un nuevo formulario
+
+<Steps>
+  <Step title="Abrir el creador">
+    Haz clic en el botón **Nueva formulario** en la esquina superior derecha.
+  </Step>
+  <Step title="Ingresar nombre y descripción">
+    Escribe un **Nombre del formulario** descriptivo y, de forma opcional, una **Descripción** que explique su propósito.
+  </Step>
+  <Step title="Agregar campos">
+    En el panel izquierdo **Tipos de campo**, haz clic sobre el tipo que deseas agregar o arrástralo al área central para posicionarlo en un lugar específico.
+  </Step>
+  <Step title="Configurar propiedades del campo">
+    Selecciona cualquier campo en el área central para editar sus propiedades en el panel derecho: nombre, etiqueta, si es obligatorio y opciones disponibles.
+  </Step>
+  <Step title="Asignar a colas y canales">
+    Haz clic en **Asignar a colas y canales** para vincular el formulario a las colas donde estará disponible.
+  </Step>
+  <Step title="Publicar el formulario">
+    Cuando el formulario esté listo, haz clic en **Publicar** para activarlo. También puedes activar el toggle **Por defecto** si quieres que sea el formulario predeterminado del sistema.
+  </Step>
+</Steps>
+
+## Editor de formulario
+
+El editor permite construir el formulario de forma visual. Cuenta con tres paneles: tipos de campo a la izquierda, área de construcción al centro y propiedades del campo seleccionado a la derecha.
+
+![Editor de formulario](/images/soulchat/formulario-editor.png)
+
+### Tipos de campo disponibles
+
+| Tipo de campo | Descripción |
+| --- | --- |
+| **Texto** | Campo de una línea para respuestas cortas. |
+| **Área de texto** | Campo multilínea para respuestas extensas. |
+| **Número** | Acepta únicamente valores numéricos. |
+| **Moneda** | Campo numérico con formato de valor monetario. |
+| **Fecha** | Selector de calendario para ingresar fechas. |
+| **Fecha y hora** | Selector combinado de fecha y hora. |
+| **Lista desplegable** | Menú con opciones predefinidas de selección única. |
+| **Selección múltiple** | Permite elegir varias opciones de una lista. |
+| **Botón de opción** | Opciones tipo radio button de selección exclusiva. |
+
+<Note>
+  Haz clic en un tipo de campo para agregarlo al final del formulario, o arrástralo para colocarlo en la posición deseada.
+</Note>
+
+## Estados de un formulario
+
+| Estado | Descripción |
+| --- | --- |
+| **Borrador** | El formulario se está editando y no está disponible para los agentes. |
+| **Publicado** | El formulario está activo y los agentes pueden completarlo al cerrar conversaciones. |
+| **Archivado** | El formulario fue retirado del uso activo pero se conserva en el sistema. |
+
+<Warning>
+  Al editar un formulario publicado, el sistema lo devuelve automáticamente a estado **Borrador**. Recuerda volver a publicarlo cuando termines los cambios.
+</Warning>
+
+## Asignar formulario a colas
+
+Tras crear el formulario, usa el botón **Asignar a colas y canales** para seleccionar en cuáles colas aparecerá este formulario al momento del cierre de conversación. Un formulario puede asignarse a múltiples colas simultáneamente.
+
+<Tip>
+  El formulario marcado como **Default** se muestra automáticamente en cualquier cola que no tenga un formulario específico asignado. Asegúrate de mantener siempre un formulario Default publicado.
+</Tip>

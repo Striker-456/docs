@@ -1,0 +1,98 @@
+---
+title: "Meta Templates de WhatsApp en SoulChat"
+sidebarTitle: "Meta Templates"
+description: "Gestiona los templates aprobados por Meta para envíos outbound y masivos en SoulChat. Crea, revisa y actualiza el estado de aprobación de tus plantillas de WhatsApp."
+---
+
+Los Meta Templates son plantillas de mensaje previamente aprobadas por Meta (WhatsApp Business) que SoulChat utiliza para iniciar conversaciones outbound y ejecutar campañas masivas. Sin aprobación de Meta, no es posible enviar mensajes proactivos a los contactos.
+
+![Meta Templates](/images/soulchat/meta-templates-lista.png)
+
+## Panel de templates
+
+La pantalla lista todos los templates aprobados disponibles para tu cuenta. El sistema muestra el total de registros en la esquina superior derecha.
+
+| Columna | Descripción |
+| --- | --- |
+| **ID** | Identificador único del template en el sistema. |
+| **Estado Meta** | Estado de aprobación otorgado por Meta (por ejemplo, Aprobado). |
+| **Nombre** | Nombre técnico del template en formato snake_case. |
+| **Tipo** | Formato del mensaje: TEXT, BUTTONS o LISTS. |
+| **Acciones** | Ojo (previsualizar), Copiar y Eliminar. |
+
+### Pestañas de proveedor
+
+| Pestaña | Descripción |
+| --- | --- |
+| **Connectly** | Templates gestionados a través del proveedor Connectly. |
+| **Soul** | Templates creados y administrados directamente desde SoulChat. |
+
+<Tip>
+  Usa el botón **Actualizar estados** para sincronizar el estado de aprobación más reciente desde Meta. Esto es útil cuando acabas de enviar un template para revisión y quieres confirmar que fue aprobado.
+</Tip>
+
+## Crear un template
+
+El formulario de creación permite diseñar un nuevo template de WhatsApp y enviarlo a revisión ante Meta.
+
+![Crear template](/images/soulchat/meta-templates-crear.png)
+
+<Steps>
+  <Step title="Abrir el formulario">
+    Haz clic en **\+ Crear template** en la esquina superior derecha.
+  </Step>
+  <Step title="Ingresar el nombre">
+    Escribe el **Nombre** del template. Solo se permiten letras, espacios y guiones bajos; el sistema lo normaliza automáticamente a minúsculas.
+  </Step>
+  <Step title="Seleccionar el idioma">
+    Elige el **Idioma** del template en el menú desplegable (por ejemplo, Español).
+  </Step>
+  <Step title="Agregar descripción interna (opcional)">
+    Escribe una **Descripción** para uso interno que ayude a identificar el propósito del template. Este texto no se envía a Meta ni al contacto.
+  </Step>
+  <Step title="Definir los usos">
+    Marca al menos una casilla de **Usos**: **Outbound** para conversaciones individuales o **Masivos** para campañas de envío en lote.
+  </Step>
+  <Step title="Redactar el mensaje">
+    En la sección **MENSAJE**, escribe el **Texto del mensaje**. Usa `{{1}}`, `{{2}}`... para insertar variables dinámicas que se reemplazarán al momento del envío.
+  </Step>
+  <Step title="Configurar opcionales">
+    Activa el toggle **Imagen de encabezado** si deseas incluir una imagen al inicio del mensaje. Opcionalmente agrega un **Footer** con texto de cierre (por ejemplo, "Equipo de Soporte").
+  </Step>
+  <Step title="Revisar la vista previa">
+    El panel derecho muestra cómo verá el contacto el mensaje en WhatsApp. Verifica el contenido antes de continuar.
+  </Step>
+  <Step title="Enviar a Meta">
+    Haz clic en **Crear template** para enviar el template a revisión ante Meta.
+  </Step>
+</Steps>
+
+### Campos del formulario
+
+| Campo | Obligatorio | Descripción |
+| --- | --- | --- |
+| **Nombre** | Sí | Identificador único en snake_case (ej: recordatorio_cita). No se puede modificar tras la creación. |
+| **Idioma** | Sí | Idioma del contenido del template. |
+| **Descripción** | No | Nota interna que no se envía a Meta. |
+| **Usos** | Sí | Al menos uno: Outbound, Masivos, o ambos. |
+| **Texto del mensaje** | Sí | Cuerpo del mensaje. Admite variables `{{1}}`, `{{2}}`... |
+| **Imagen de encabezado** | No | Imagen opcional al inicio del mensaje. |
+| **Footer** | No | Texto de cierre del mensaje (ej: nombre del equipo). |
+
+<Note>
+  El **nombre del template no se puede modificar** después de creado. Elige un nombre representativo desde el inicio ya que será el identificador permanente ante Meta.
+</Note>
+
+<Warning>
+  El template debe ser aprobado por Meta antes de poder usarse en envíos outbound o masivos. El proceso de revisión puede tomar desde minutos hasta días hábiles. Usa **Actualizar estados** para consultar el resultado.
+</Warning>
+
+### Tipos de template
+
+Los tres tipos de template disponibles corresponden a las pestañas superiores del formulario de creación:
+
+| Tipo | Descripción |
+| --- | --- |
+| **Texto** | Mensaje de solo texto con variables dinámicas opcionales. |
+| **Botones** | Mensaje con botones de respuesta rápida o de llamada a la acción. |
+| **Listas** | Mensaje con un menú de opciones en formato lista desplegable. |

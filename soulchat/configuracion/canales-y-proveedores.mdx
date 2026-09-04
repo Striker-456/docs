@@ -1,0 +1,47 @@
+---
+title: "Canales y Proveedores: Configuración de Integraciones en SoulChat"
+sidebarTitle: "Canales y Proveedores"
+description: "Configura los canales de comunicación WhatsApp y sus proveedores, gestiona mensajes inbound/outbound y define claves API para integraciones externas en SoulChat."
+---
+
+En esta sección los administradores pueden configurar los canales de comunicación y sus proveedores asociados. La pantalla centraliza la gestión de la integración con WhatsApp, el control de mensajería entrante y saliente, y las claves de acceso para sistemas externos.
+
+![Pantalla de Canales y Proveedores en SoulChat - configuración de WhatsApp](/images/soulchat/canales-proveedores.png)
+
+![Pantalla de Canales y Proveedores en SoulChat - configuración de WhatsApp](/images/soulchat/canales-proveedores.png)
+
+## Configuración de WhatsApp
+
+En esta sección se configuran las credenciales del proveedor de WhatsApp. Los campos disponibles son:
+
+| Campo | Descripción |
+| --- | --- |
+| **Proveedor** | Nombre o identificador del proveedor de WhatsApp Business API. |
+| **Número de teléfono** | Número de línea asociado a la cuenta de WhatsApp Business. |
+| **ID del negocio** | Identificador único del negocio registrado en Meta. |
+| **Clave API** | Token de autenticación para la conexión con el proveedor. |
+| **URL del webhook** | Endpoint configurado para recibir notificaciones de estado de los mensajes. |
+| **Fecha de creación** | Registro automático de cuándo se creó la configuración. |
+| **Fecha de actualización** | Registro automático de la última modificación realizada. |
+| **Path (messages)** | Endpoint generado automáticamente para recibir mensajes entrantes. No editable. |
+| **Path (delivery_status)** | Endpoint generado automáticamente para recibir notificaciones de entrega. No editable. |
+
+## Habilitar / Deshabilitar mensajes
+
+Mediante interruptores independientes, puedes controlar el flujo de mensajería:
+
+- **Mensajes inbound**: activa o desactiva la recepción de mensajes entrantes de clientes.
+- **Mensajes outbound**: activa o desactiva el envío de mensajes salientes desde la plataforma.
+
+## Integraciones externas
+
+En esta sección puedes configurar las claves API necesarias para que sistemas externos (CRMs, ERPs, u otras plataformas) puedan enviar mensajes outbound a través de SoulChat.
+
+## Acciones de la pantalla
+
+- **Guardar cambios**: persiste todas las configuraciones realizadas en la pantalla.
+- **Eliminar configuración**: elimina la configuración del proveedor de forma permanente.
+
+<Warning>
+  Eliminar la configuración del proveedor interrumpirá de inmediato la mensajería activa (inbound y outbound). Asegúrate de tener una configuración de respaldo antes de eliminar la actual.
+</Warning>

@@ -1,0 +1,76 @@
+---
+title: "Gestor de Sesiones: Reglas de Expiración e Inactividad en SoulChat"
+sidebarTitle: "Gestor de Sesiones"
+description: "Configura de forma independiente las reglas de expiración, tiempos de espera y respuestas automatizadas por canal (Bot, Agente, Encuesta, Outbound, Masivos, Cola) en SoulChat."
+---
+
+En el Gestor de Sesiones de SoulChat configuras de forma independiente las reglas de expiración, tiempos de espera y respuestas automatizadas para cada canal y tipo de atención. Cada tarjeta muestra la fecha y hora de su última actualización y cuenta con su propio botón **Guardar**, lo que te permite ajustar los parámetros de un canal sin afectar los demás.
+
+![Gestor de Sesiones en SoulChat - configuración de tiempos por canal](/images/soulchat/gestor-sesiones.png)
+
+![Gestor de Sesiones en SoulChat - configuración de tiempos por canal](/images/soulchat/gestor-sesiones.png)
+
+## Bot, Agente, Encuesta y Agente IA
+
+Las tarjetas de **Bot**, **Agente**, **Encuesta** y **Agente IA** comparten la misma estructura de configuración:
+
+| Parámetro | Descripción |
+| --- | --- |
+| **Aviso de inactividad** | Interruptor para activar o desactivar el recordatorio automático. |
+| Texto del aviso | Campo para personalizar el mensaje de recordatorio que se envía al usuario. |
+| Tiempo de espera | Casilla para definir en minutos cuánto tiempo debe transcurrir sin respuesta antes de enviar el aviso. |
+| **Cierre** | Interruptor para habilitar la finalización automática de la conversación. |
+| Mensaje de despedida | Campo para redactar el texto que se envía al cerrar la sesión por inactividad. |
+| Minutos tras el aviso | Casilla para definir cuántos minutos deben pasar después del aviso antes de cerrar la sesión. |
+
+### Mensajes predeterminados del sistema
+
+La plataforma incluye mensajes de ejemplo configurados que puedes personalizar según el tono de tu marca:
+
+| Canal | Tipo | Mensaje predeterminado |
+| --- | --- | --- |
+| Bot | Aviso de inactividad | ¡Sigue ahí? No hemos recibido respuesta. Si no contestas pronto, la conversación se cerrará por inactividad. |
+| Bot | Cierre | La conversación fue cerrada por inactividad. Escríbenos de nuevo cuando lo necesites. |
+| Agente | Aviso de inactividad | ¿Sigues disponible? Estamos esperando tu respuesta. |
+| Agente | Cierre | La conversación fue cerrada por inactividad. Escríbenos de nuevo cuando lo necesites. |
+| Outbound | Cierre | Cerramos la conversación. Puedes contactarnos cuando gustes. |
+| Masivos | Cierre | Cerramos la conversación. Puedes contactarnos cuando gustes. |
+
+<Tip>
+  Los tiempos predeterminados son 5 minutos para el aviso de inactividad y 10 minutos para el cierre definitivo. Ajusta estos valores según el volumen de tu operación y el comportamiento típico de tus usuarios.
+</Tip>
+
+### Mensajes predeterminados del sistema
+
+La plataforma incluye mensajes de ejemplo configurados que puedes personalizar según el tono de tu marca:
+
+| Canal | Tipo | Mensaje predeterminado |
+| --- | --- | --- |
+| Bot | Aviso de inactividad | ¡Sigue ahí? No hemos recibido respuesta. Si no contestas pronto, la conversación se cerrará por inactividad. |
+| Bot | Cierre | La conversación fue cerrada por inactividad. Escríbenos de nuevo cuando lo necesites. |
+| Agente | Aviso de inactividad | ¿Sigues disponible? Estamos esperando tu respuesta. |
+| Agente | Cierre | La conversación fue cerrada por inactividad. Escríbenos de nuevo cuando lo necesites. |
+| Outbound | Cierre | Cerramos la conversación. Puedes contactarnos cuando gustes. |
+| Masivos | Cierre | Cerramos la conversación. Puedes contactarnos cuando gustes. |
+
+<Tip>
+  Los tiempos predeterminados son 5 minutos para el aviso de inactividad y 10 minutos para el cierre definitivo. Ajusta estos valores según el volumen de tu operación y el comportamiento típico de tus usuarios.
+</Tip>
+
+## Outbound, Masivos y Cola
+
+Las tarjetas de **Outbound**, **Masivos** y **Cola** tienen una configuración simplificada enfocada en el cierre automático:
+
+| Parámetro | Descripción |
+| --- | --- |
+| **Cierre automático** | Interruptor para activar o desactivar la finalización automática. |
+| Mensaje de cierre | Campo para configurar el texto de despedida al cerrar. |
+| Límite de tiempo | Casilla para definir en minutos el límite para dar por terminada la interacción o la permanencia en cola. |
+
+<Tip>
+  Calibra los tiempos de inactividad según el canal. Los bots pueden tolerar más tiempo sin respuesta que los agentes humanos, ya que el usuario puede estar leyendo opciones. Las sesiones con agentes humanos suelen requerir tiempos más cortos para mantener la eficiencia operativa.
+</Tip>
+
+<Note>
+  Cada tarjeta se guarda de forma independiente. Confirma el guardado en cada sección que modifiques haciendo clic en el botón **Guardar** correspondiente antes de cambiar de canal.
+</Note>

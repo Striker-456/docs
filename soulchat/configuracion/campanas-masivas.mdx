@@ -1,0 +1,89 @@
+---
+title: "Campañas Masivas de WhatsApp en SoulChat"
+sidebarTitle: "Envíos Masivos"
+description: "Configura templates aprobados de WhatsApp para campañas masivas en SoulChat. Define comportamiento, flujo asociado y límite diario de envíos por plantilla."
+---
+
+Envíos masivos te permite configurar los templates aprobados de WhatsApp que se usarán en tus campañas outbound. Desde esta pantalla defines si cada template actúa como notificación simple o si inicia un flujo conversacional automático, y estableces el límite diario de envíos por plantilla.
+
+![Envíos masivos](/images/soulchat/campanas-lista.png)
+
+<Info>
+  ¿Cómo funciona? Selecciona un template aprobado de WhatsApp. Puedes configurarlo para que inicie un flujo automático o simplemente envíe una notificación al contacto.
+</Info>
+
+## Templates configurados
+
+La sección **Templates configurados para envíos masivos** lista todas las plantillas ya agregadas. Puedes buscar registros, filtrar resultados y reordenar filas arrastrándolas para ajustar la prioridad de envío.
+
+| Template | Tipo | Comportamiento | Flujo | Límite diario |
+| --- | --- | --- | --- | --- |
+| Bienvenida al cliente (bienvenida_cl) | TEXT | Iniciar flujo | Flujo Recordatorio (Activo) | 500 msg/día |
+| Promoción especial (promo_especial) | BUTTONS | Solo notificación | — | 1,000 msg/día |
+| Recordatorio de cita (recordatorio_cita) | BUTTONS | Iniciar flujo | Flujo Seguimiento (Activo) | 2,000 msg/día |
+| Seguimiento postventa (seguimiento_pv) | TEXT | Solo notificación | — | 800 msg/día |
+
+### Descripción de columnas
+
+| Columna | Descripción |
+| --- | --- |
+| **Template** | Nombre visible de la campaña y su identificador técnico entre paréntesis. |
+| **Tipo** | Formato del mensaje aprobado ante Meta: TEXT o BUTTONS. |
+| **Comportamiento** | Acción al enviar: _Iniciar flujo_ o _Solo notificación_. |
+| **Flujo** | Árbol conversacional asociado y su estado operativo. |
+| **Límite diario** | Cuota máxima de mensajes permitida por día para ese template. |
+| **Vista** | Ícono de ojo para previsualizar el contenido del mensaje. |
+| **Acciones** | Copiar configuración o eliminar el template del listado. |
+
+<Tip>
+  Puedes arrastrar las filas para reordenar los templates. El orden determina la prioridad de envío cuando se ejecutan campañas simultáneas.
+</Tip>
+
+## Agregar un template a la lista
+
+![Agregar template](/images/soulchat/campanas-agregar.png)
+
+<Steps>
+  <Step title="Abrir el panel de configuración">
+    Haz clic en **\+ Agregar template** en la esquina superior derecha de la pantalla.
+  </Step>
+  <Step title="Buscar y seleccionar el template">
+    En el campo **Buscar template**, despliega la lista y selecciona la plantilla deseada. Solo se muestran templates con estado aprobado.
+  </Step>
+  <Step title="Verificar la vista previa">
+    Activa el toggle **Vista previa del mensaje** para revisar el contenido antes de confirmar.
+  </Step>
+  <Step title="Elegir el comportamiento del envío">
+    Selecciona una de las dos opciones:
+
+    - **Solo notificación**: envía el mensaje sin iniciar conversación interactiva.
+    - **Iniciar flujo**: detona automáticamente un flujo conversacional al enviar o recibir respuesta.
+  </Step>
+  <Step title="Seleccionar el flujo asociado">
+    Si elegiste **Iniciar flujo**, selecciona el árbol conversacional que se ejecutará. Este paso no aplica para **Solo notificación**.
+  </Step>
+  <Step title="Configurar el límite diario">
+    Ingresa la cantidad máxima de mensajes diarios permitida para este template. La unidad es msg/día.
+  </Step>
+  <Step title="Agregar a la lista">
+    Haz clic en **Agregar a la lista** para incorporar el template a la tabla de configurados.
+  </Step>
+  <Step title="Guardar cambios">
+    Haz clic en **Guardar cambios** al pie de la tabla para persistir la configuración completa.
+  </Step>
+</Steps>
+
+### Comparativa de comportamientos
+
+| Comportamiento | Descripción | Cuándo usarlo |
+| --- | --- | --- |
+| **Solo notificación** | Envía el mensaje como aviso informativo sin abrir flujo conversacional. | Alertas, promociones o recordatorios que no requieren respuesta del cliente. |
+| **Iniciar flujo** | Al enviar o recibir respuesta, se detona automáticamente el flujo configurado. | Bienvenidas, seguimientos o cualquier campaña que deba iniciar una conversación guiada. |
+
+<Warning>
+  Solo aparecen en el selector los templates con estado **Aprobado** en Meta. Si no encuentras una plantilla, revisa su estado en el módulo de [Meta Templates](/soulchat/configuracion/meta-templates).
+</Warning>
+
+<Note>
+  El límite diario solo puede ser modificado por administradores. Este control evita bloqueos de WhatsApp por envío masivo y respeta las cuotas autorizadas para tu cuenta.
+</Note>

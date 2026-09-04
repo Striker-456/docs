@@ -1,0 +1,73 @@
+---
+title: "Colas y Horarios: Gestión de Grupos de Atención en SoulChat"
+sidebarTitle: "Colas y Horarios"
+description: "Administra las colas de atención, configura la asignación prioritaria de chats y define los horarios operativos y mensajes fuera de horario por cola en SoulChat."
+---
+
+En la pestaña Colas administras los grupos o departamentos de atención a los que se asignan las conversaciones de los usuarios. Desde aquí puedes crear nuevas colas, configurar la prioridad de distribución y definir los horarios de atención con sus respectivos mensajes fuera de horario.
+
+![Lista de Colas de Atención en SoulChat - colas existentes y controles](/images/soulchat/colas-atencion.png)
+
+## Panel de control
+
+| Elemento | Descripción |
+| --- | --- |
+| Buscador **Buscar colas...** | Campo de búsqueda rápida por nombre de cola |
+| **\+ Crear cola** | Agrega un nuevo grupo o departamento de atención al sistema |
+| **Modo Prioridad** | Toggle para activar la asignación prioritaria en la distribución de chats entre colas |
+| Columna **ACCIONES** | Íconos por fila: editar configuración, gestionar agentes, configurar horario, eliminar |
+| Columna **NOMBRE** | Nombre de la cola (ej: global con badge `Global`, prueba edwar, prueba hanna) |
+| Columna **AGENTES** | Número de agentes asignados a la cola |
+
+## Crear una nueva cola
+
+<Steps>
+  <Step title="Hacer clic en 'Crear cola'">
+    Presiona el botón **Crear cola** en la parte superior del panel de control.
+  </Step>
+  <Step title="Ingresar los parámetros de la cola">
+    Completa el nombre y los parámetros de la nueva cola de atención.
+  </Step>
+  <Step title="Configurar el horario">
+    Haz clic en el icono del calendario junto a la cola recién creada para abrir la ventana modal de horarios.
+  </Step>
+  <Step title="Definir los días y rangos horarios">
+    Configura la disponibilidad de atención para cada día de la semana.
+  </Step>
+  <Step title="Escribir el mensaje de no atención">
+    Redacta el texto que recibirán los usuarios cuando escriban fuera del horario configurado.
+  </Step>
+  <Step title="Guardar los cambios">
+    Confirma la configuración para activar la cola con sus horarios.
+  </Step>
+</Steps>
+
+![Modal de Configuración de Horario - cola "prueba edwar" con días y rangos horarios](/images/soulchat/horario-config.png)
+
+## Horario de atención (ventana modal)
+
+Al hacer clic en el icono del calendario de una cola específica, se despliega la ventana de configuración de horarios con las siguientes opciones:
+
+**Opciones generales**
+
+- **Activar Atención**: interruptor general para habilitar o suspender la atención de la cola.
+- **24/7 (lunes a domingo)**: interruptor para establecer atención ininterrumpida durante toda la semana.
+
+**Configuración por días de la semana**
+
+Para cada día (lunes a domingo) puedes configurar de forma independiente:
+
+| Campo | Descripción |
+| --- | --- |
+| **Activo** | Casilla para marcar si el día tiene atención habilitada. |
+| **Atención 24/7** | Interruptor para cubrir el día completo sin rangos específicos. |
+| **Inicio** | Hora de inicio de la jornada de atención del día. |
+| **Fin** | Hora de cierre de la jornada de atención del día. |
+
+**Mensaje de no atención**
+
+Campo de texto libre en la parte inferior para personalizar la respuesta automática que recibirá el usuario cuando escriba fuera del horario configurado.
+
+<Tip>
+  Usa el campo de mensaje de no atención para orientar al usuario hacia canales alternativos o indicar el horario de atención disponible. Un mensaje claro reduce la frustración del cliente y las solicitudes de soporte innecesarias.
+</Tip>
