@@ -33,6 +33,15 @@
             ]
           },
           {
+            "group": "CIU",
+            "pages": [
+              "ciu/introduccion",
+              "ciu/usuarios",
+              "ciu/roles",
+              "ciu/permisos"
+            ]
+          },
+          {
             "group": "Operaciones",
             "pages": [
               "soulchat/dashboard",
@@ -61,8 +70,10 @@
               "soulchat/sistema/logs-tecnicos",
               "soulchat/sistema/auditoria",
               "soulchat/sistema/env-dev",
+              "soulchat/sistema/env-massive",
               "soulchat/sistema/catalogos",
-              "soulchat/sistema/monitoreo"
+              "soulchat/sistema/monitoreo",
+              "soulchat/sistema/copiloto-sara"
             ]
           }
         ]
